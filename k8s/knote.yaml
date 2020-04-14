@@ -8,6 +8,7 @@ spec:
   ports:
     - port: 80
       targetPort: 3000
+      nodePort: 30000
   type: LoadBalancer
 ---
 apiVersion: apps/v1
@@ -26,7 +27,7 @@ spec:
     spec:
       containers:
         - name: knote
-          image: learnk8s/knote-js:1.0.0
+          image: mmontes11/knote-js
           ports:
             - containerPort: 3000
           env:
